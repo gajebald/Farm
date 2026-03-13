@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farm Stack Tycoon</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <h1>🐔 Farm Stack Tycoon</h1>
+        <div class="stat-group">
+          <span class="chip">💰 Geld: <strong id="money">120</strong>$</span>
+          <span class="chip">🥚 Eier: <strong id="eggs">0</strong></span>
+          <span class="chip">📦 Kisten: <strong id="crates">0</strong></span>
+        </div>
+      </header>
+
+      <section class="board">
+        <article class="card">
+          <h2>Hühnerwiese</h2>
+          <p>Hühner legen automatisch Eier. Upgrade erhöht die Rate.</p>
+          <div class="row">
+            <button id="buyChickenBtn">Huhn kaufen (<span id="chickenCost">80</span>$)</button>
+            <button id="upgradeChickenBtn">Wiese upgraden (<span id="upgradeCost">150</span>$)</button>
+          </div>
+          <p>
+            Hühner: <strong id="chickens">2</strong> · Rate: <strong id="productionRate">1.0</strong>
+            Eier/s pro Huhn
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Packmaschine</h2>
+          <p>Aus 6 Eiern wird 1 Kiste. Verkauf bringt Geld.</p>
+          <div class="row">
+            <button id="packBtn">6 Eier packen</button>
+            <button id="sellBtn">Kiste verkaufen (+45$)</button>
+          </div>
+          <p>In Warteschlange: <strong id="queuedCustomers">0</strong> Kunden</p>
+        </article>
+
+        <article class="card">
+          <h2>Stapel-Action</h2>
+          <p>
+            Jede Kiste landet auf deinem Stapel. Bei 10 Kisten gibt es Bonusgeld.
+          </p>
+          <div class="stack-zone">
+            <div id="stackVisual" class="stack-visual"></div>
+          </div>
+          <p>Aktueller Stapel: <strong id="stackCount">0</strong>/10</p>
+        </article>
+      </section>
+
+      <footer class="log-wrap">
+        <h2>Spiel-Log</h2>
+        <ul id="log"></ul>
+      </footer>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
